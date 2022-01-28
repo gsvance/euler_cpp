@@ -1,0 +1,12 @@
+#!/bin/bash
+# Run the make utility in every problem's directory
+
+for thing in `ls`; do
+	if [ -d "$thing" ]; then
+		cd "$thing"
+		make
+		cd ..
+	fi
+done
+
+exit 0

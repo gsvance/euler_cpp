@@ -1,0 +1,11 @@
+#!/bin/bash
+# Delete the executable in every problem's directory
+
+for thing in `ls`; do
+	if [ -d "$thing" ]; then
+		echo "rm ${thing}/${thing}"
+		rm "${thing}/${thing}"
+	fi
+done
+
+exit 0
