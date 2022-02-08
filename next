@@ -16,11 +16,13 @@ os.mkdir(num_str)
 
 # make new C++ source file
 with open(os.path.join(num_str, num_str + ".cpp"), "w") as cpp:
-	cpp.write("// \n\n#include <iostream>\n\nint main()\n{\n\t\n\t\n\treturn 0;\n}")
+	cpp.write("// \n\n#include <iostream>\n")
+	cpp.write("\nint main()\n{\n\t\n\t\n\treturn 0;\n}")
 
 # write the new makefile
 with open(os.path.join(num_str, "Makefile"), "w") as make:
-	make.write("%s: %s.cpp\n\tg++ %s.cpp -o %s" % tuple([num_str] * 4))
+	make.write("%s: %s.cpp\n\tg++ %s.cpp -o %s\n" % tuple([num_str] * 4))
+	make.write("\n.PHONY: clean\n\nclean:\n\trm -f %s\n" % (num_str,))
 
 # print message to the user
 print "Prepared the directory for Problem %d!" % (next)
