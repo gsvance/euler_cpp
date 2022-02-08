@@ -2,7 +2,7 @@
 
 # Make the directory etc. for my next Project Euler problem
 
-next = 2
+next = 3
 next_line = 4  # line of this file with the variable 'next'
 next_file = "next"  # name of this python file
 
