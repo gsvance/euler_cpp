@@ -2,11 +2,13 @@
 
 # Make the directory etc. for my next Project Euler problem
 
-next = 3
-next_line = 4  # line of this file with the variable 'next'
-next_file = "next"  # name of this python file
-
+import glob
 import os
+
+probs = set(glob.glob("./[0-9][0-9][0-9]/"))
+assert probs == set(["./" + str(i+1).zfill(3) + "/" for i in range(len(probs))])
+
+next = len(probs) + 1
 
 # 3-digit number for problem
 num_str = str(next).zfill(3)
@@ -26,11 +28,4 @@ with open(os.path.join(num_str, "Makefile"), "w") as make:
 
 # print message to the user
 print "Prepared the directory for Problem %d!" % (next)
-
-# update this file for the next time
-with open(next_file, "r") as self:
-	lines = self.readlines()
-lines[next_line] = "next = %d\n" % (next + 1)
-with open(next_file, "w") as self:
-	self.write("".join(lines))
 
