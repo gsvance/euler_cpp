@@ -21,7 +21,7 @@ unsigned int gcd(unsigned int a, unsigned int b)
 
 // Calculate the least common multiple of a and b
 // Implementation exploits the fact that lcm(a, b) = a * b / gcd(a, b)
-unsigned int lcm(unsigned int a, unsigned int b)
+inline unsigned int lcm(unsigned int a, unsigned int b)
 {
 	unsigned int g = gcd(a, b);
 	// Both a and b are evenly divisible by g (by definition of gcd),
