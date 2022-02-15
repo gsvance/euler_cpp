@@ -20,7 +20,7 @@ int main()
 	
 	// Check all numbers q for primeness starting at q = 2
 	// Use the primes we already have to check the next potential primes
-	// Continue on until with have collected enough primes
+	// Continue on until we have collected enough primes
 	for (unsigned int q = 2; primes.size() < nth; ++q) {
 		bool q_is_prime = true;
 		for (int i = 0; (i < primes.size()) && (sqr(primes[i]) <= q); ++i) {
